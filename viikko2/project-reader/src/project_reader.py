@@ -16,6 +16,8 @@ class ProjectReader:
         try:
             poetry = parsed["tool"]["poetry"]
             name = poetry["name"]
+            license = poetry["license"]
+            authors = poetry["authors"]
             description = poetry["description"]
             dependencies = list(poetry["dependencies"])
             dev_dependencies = list(poetry["group"]["dev"]["dependencies"])
@@ -23,4 +25,4 @@ class ProjectReader:
             return None
 
         # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-        return Project(name, description, dependencies, dev_dependencies)
+        return Project(name, description, license, authors, dependencies, dev_dependencies)
