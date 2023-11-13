@@ -4,5 +4,6 @@ class Player:
             setattr(self, field, dict.get(field, "-"))
     
     def __str__(self):
-        return "{} team {} goals {} assists {}".format(
-                self.name, self.team, self.goals, self.assists)
+        return "{:25} {:5} {:3}  + {:3}  ={:4}".format(
+                self.name, self.team, self.goals, self.assists,
+                self.goals + self.assists)
