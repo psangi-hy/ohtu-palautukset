@@ -7,21 +7,15 @@ Test Setup  Reset Application And Go To Register Page
 
 *** Test Cases ***
 Register With Valid Username And Password
-	Set Username  kalle
-	Set Register Password  kalle123
-	Submit Register Credentials
+	Register  kalle  kalle123
 	Register Should Succeed
 
 Register With Too Short Username And Valid Password
-	Set Username  ka
-	Set Register Password  kalle123
-	Submit Register Credentials
+	Register  ka  kalle123
 	Register Should Fail With Message  The username must be at least 3 characters long
 
 Register With Valid Username And Invalid Password
-	Set Username  kalle
-	Set Register Password  kallekalle
-	Submit Register Credentials
+	Register  kalle  kallekalle
 	Register Should Fail With Message  The password may not consist only of letters
 
 Register With Nonmatching Password And Password Confirmation
