@@ -8,6 +8,7 @@ ${DELAY}  0.0 seconds
 ${HOME_URL}  http://${SERVER}
 ${LOGIN_URL}  http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
+${WELCOME_URL}  http://${SERVER}/welcome
 
 *** Keywords ***
 Open And Configure Browser
@@ -28,8 +29,18 @@ Main Page Should Be Open
 Register Page Should Be Open
 	Title Should Be  Register
 
+Welcome Page Should Be Open
+	Title Should Be  Welcome to Ohtu Application!
+
 Go To Login Page
     Go To  ${LOGIN_URL}
 
 Go To Starting Page
 	Go To  ${HOME_URL}
+
+Go To Register Page
+	Go To  ${REGISTER_URL}
+
+Reset Application And Go To Register Page
+	Reset Application
+	Go To Register Page
