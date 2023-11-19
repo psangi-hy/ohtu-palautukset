@@ -38,3 +38,14 @@ class UserService:
             raise UserInputError("Username and password are required")
 
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        if len(username) < 3:
+            raise UserInputError("The username must be at least 3 characters long")
+
+        if any(ord(c) not in range(ord('a'), ord('z')) for c in username):
+            raise UserInputError("The username may only contain the lower case letters a-z")
+
+        if len(password) < 8:
+            raise UserInputError("The password must be at least 8 characters long")
+
+        if password.isalpha():
+            raise UserInputError("The password may not consist only of letters")
