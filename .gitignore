@@ -2,3 +2,6 @@
 **/poetry.lock
 **/.coverage
 *.swp
+log.html
+report.html
+output.xml
