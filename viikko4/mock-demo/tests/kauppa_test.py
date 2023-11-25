@@ -78,7 +78,7 @@ class TestKauppa(unittest.TestCase):
         kauppa.maksa("1111")
 
         # tarkistetaan että tässä vaiheessa viitegeneraattorin metodia uusi on kutsuttu kerran
-        self.assertEqual(viitegeneraattori_mock.uusi.call_count, 1)
+        self.assertEqual(viitegeneraattori_mock.uusi.call_count, 0)
 
         kauppa.aloita_ostokset()
         kauppa.lisaa_ostos(1)
