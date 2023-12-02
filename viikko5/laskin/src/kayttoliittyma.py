@@ -62,14 +62,14 @@ class Kayttoliittyma:
         except Exception:
             pass
 
-        if komento == Komento.SUMMA:
-            self._sovelluslogiikka.plus(arvo)
-        elif komento == Komento.EROTUS:
-            self._sovelluslogiikka.miinus(arvo)
-        elif komento == Komento.NOLLAUS:
-            self._sovelluslogiikka.nollaa()
-        elif komento == Komento.KUMOA:
-            pass
+        komennot = {
+            Komento.SUMMA: lambda arvo: self._sovelluslogiikka.plus(arvo),
+            Komento.EROTUS: lambda arvo: self._sovelluslogiikka.miinus(arvo),
+            Komento.NOLLAUS: lambda _: self._sovelluslogiikka.nollaa(),
+            Komento.KUMOA: lambda _: None,
+        }
+
+        komennot[komento](arvo)
 
         self._kumoa_painike["state"] = constants.NORMAL
 
