@@ -66,7 +66,7 @@ class Kayttoliittyma:
             Komento.SUMMA: lambda arvo: self._sovelluslogiikka.plus(arvo),
             Komento.EROTUS: lambda arvo: self._sovelluslogiikka.miinus(arvo),
             Komento.NOLLAUS: lambda _: self._sovelluslogiikka.nollaa(),
-            Komento.KUMOA: lambda _: None,
+            Komento.KUMOA: lambda _: self._sovelluslogiikka.kumoa(),
         }
 
         komennot[komento](arvo)
