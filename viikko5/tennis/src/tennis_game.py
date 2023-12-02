@@ -16,14 +16,12 @@ class TennisGame:
         temp_score = 0
 
         if self.score1 == self.score2:
-            if self.score1 == 0:
-                score = "Love-All"
-            elif self.score1 == 1:
-                score = "Fifteen-All"
-            elif self.score1 == 2:
-                score = "Thirty-All"
-            else:
-                score = "Deuce"
+            score = [
+                "Love-All",
+                "Fifteen-All",
+                "Thirty-All",
+                "Deuce"
+            ][min(self.score1, 3)]
         elif self.score1 >= 4 or self.score2 >= 4:
             minus_result = self.score1 - self. score2
 
