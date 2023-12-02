@@ -28,13 +28,13 @@ class TennisGame:
             minus_result = self.m_score1 - self. m_score2
 
             if minus_result == 1:
-                score = "Advantage player1"
+                score = "Advantage " + self.player1_name
             elif minus_result == -1:
-                score = "Advantage player2"
+                score = "Advantage " + self.player2_name
             elif minus_result >= 2:
-                score = "Win for player1"
+                score = "Win for " + self.player1_name
             else:
-                score = "Win for player2"
+                score = "Win for " + self.player2_name
         else:
             for i in range(1, 3):
                 if i == 1:
