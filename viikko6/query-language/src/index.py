@@ -38,6 +38,19 @@ def main():
             .playsIn("NYR")
             .hasAtLeast(10, "goals")
             .hasFewerThan(20, "goals")
+            .build(),
+        QueryBuilder()
+            .oneOf(
+                QueryBuilder()
+                    .playsIn("PHI")
+                    .hasAtLeast(10, "assists")
+                    .hasFewerThan(5, "goals")
+                    .build(),
+                QueryBuilder()
+                    .playsIn("EDM")
+                    .hasAtLeast(50, "points")
+                    .build()
+            )
             .build()
     ]
 
